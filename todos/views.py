@@ -1,7 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
-def home(request):
-    return render (request,'todos/home.html')
+from .models import Todo
 
-    #return HttpResponse("Hello, world. You're at the Todos home page.")
+def todo_list(resquest):
+   # todos =Todo.objects.all()
+    nome = "Ana"
+    return render(resquest, "todos/todo_list.html", {"nome": nome}) 
